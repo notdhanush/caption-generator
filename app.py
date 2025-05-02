@@ -1,3 +1,9 @@
+import os
+
+# Install ffmpeg if not available
+if not os.path.exists("/usr/bin/ffmpeg"):
+    os.system("apt-get update && apt-get install -y ffmpeg")
+
 import streamlit as st
 import whisper
 import tempfile
