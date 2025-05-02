@@ -37,9 +37,7 @@ if uploaded_file is not None:
 
         # If Thanglish needed, rewrite using OpenAI
         if lang_choice == "Thanglish":
-            import openai
-            openai.api_key = st.text_input("Enter your OpenAI API key:", type="password")
-
+        
             if openai.api_key:
                 with st.spinner("Converting to Thanglish..."):
                     response = openai.ChatCompletion.create(
