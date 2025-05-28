@@ -27,8 +27,8 @@ if uploaded_file is not None:
         temp_file.close()
 
         # Load Whisper
-        model = whisper.load_model("tiny")
-        result = model.transcribe(temp_file.name, language="ta")
+        model = whisper.load_model("large")
+        result = model.transcribe(temp_file.name, language="ta", fp16=False, temperature=0)
 
         # Display Tamil transcript
         tamil_text = result["text"]
